@@ -1,0 +1,67 @@
+{
+    "especial": [{
+            "id": "1",
+            "nome": "Felicitá",
+            "ingredientes": "Muçarela, molho de tomate, oregano",
+            "preco": "50,90",
+            "urlimg": "img/felicita.jpg"
+    },
+        {
+            "id": "2",
+            "nome": "Dos Mano's",
+            "ingredientes": "Muçarela, molho, javali, picanha",
+            "preco": "60,90",
+            "urlimg": "img/dosmanos.jpg"
+    },
+    {
+            "id": "9",
+            "nome": "Peperonni",
+            "ingredientes": "Muçarela, molho, javali, picanha",
+            "preco": "60,90",
+            "urlimg": "img/pizza1.jpg"
+    }],
+
+    "tradicional": [{
+            "id": "3",
+            "nome": "Milho",
+            "ingredientes": "Muçarela, molho de tomate, milho",
+            "preco": "30,90",
+            "urlimg": "img/milho.jpg"
+    },
+        {
+            "id": "4",
+            "nome": "Presunto",
+            "ingredientes": "Muçarela, molho de tomate, presunto",
+            "preco": "36,90",
+            "urlimg": "img/presunto.jpg"
+    }],
+
+    "doce": [{
+            "id": "5",
+            "nome": "Brigadeiro",
+            "ingredientes": "Muçarela, leite condensado, chocolate",
+            "preco": "48,90",
+            "urlimg": "img/brigadeiro.jpg"
+    },
+        {
+            "id": "6",
+            "nome": "Romeu e Julieta",
+            "ingredientes": "Muçarela, leite condensado e goiabada",
+            "preco": "49,90",
+            "urlimg": "img/romeuejulieta.jpg"
+    }],
+    "exotica": [{
+            "id": "15",
+            "nome": "X-TUDO",
+            "ingredientes": "Muçarela, molho de tomate, pão, hámburguer, alface, tomate, bacon, ovo, presunto, milho, batata, maionese",
+            "preco": "58,90",
+            "urlimg": "img/x-tudo.jpg"
+    },
+        {
+            "id": "16",
+            "nome": "X-AVC",
+            "ingredientes": "1 pizza de bacon, 1 pizza de coração, 500 gramas de batata frita, 8 unidades  de Hambúrger, 500 gramas de queijo, 150 gramas de queijo cheddar, 1 pacote de salamito, 2 potes de requeijão sabor cheddar, 2 pacotes de azeitona, Molho Barbecue, Molho Shoyo",
+            "preco": "99,90",
+            "urlimg": "img/x-avc.jpg"
+    }]
+}

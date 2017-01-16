@@ -1,0 +1,74 @@
+<style type="text/css">
+    .back-to-top {
+        cursor: pointer;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+    }
+    
+    .thumbnail img {
+        min-height: 300px;
+    }
+</style>
+
+<div class="jumbotron">
+    <div class="container" id="jCardapio">
+        <h1>Cardápio</h1>
+        <p> Aqui você irá encontrar diversos tipos de pizza e poderá selecionar entre algumas clique no botão abaixo para ver os tipos de pizza que mais lhe agradam</p>
+        <button link="#esp" class="btn btn-lg btn-success">Especiais</button>
+        <button link="#tra" class="btn btn-lg btn-warning">Tradicionais</button>
+        <button link="#doc" class="btn btn-lg btn-primary">Doces</button>
+        <button link="#exo" class="btn btn-lg btn-danger">Exóticas</button>
+    </div>
+</div>
+<!-- Ancora de página -->
+<a id="esp">
+    <div class="row">
+        <div class="col-lg-12 alert alert-success">
+            <h1>Pizzas Especiais</h1>
+        </div>
+    </div>
+    <div class="row" id="especiais">
+    </div>
+</a>
+
+<!-- Ancora de página -->
+<a id="tra">
+    <div class="row">
+        <div class="col-lg-12  alert alert-warning">
+            <h1>Pizzas Tradicionais</h1>
+        </div>
+    </div>
+    <div class="row" id="tradicionais">
+    </div>
+</a>
+
+<!-- Ancora de página -->
+<a id="doc">
+    <div class="row">
+        <div class="col-lg-12  alert alert-info">
+            <h1>Pizzas Doces</h1>
+        </div>
+    </div>
+    <div class="row" id="doces">
+    </div>
+</a>
+
+<!-- Ancora de página -->
+<a id="exo">
+    <div class="row">
+        <div class="col-lg-12  alert alert-danger">
+            <h1>Pizzas Exóticas</h1>
+        </div>
+    </div>
+    <div class="row" id="exoticas"> 
+    </div>
+</a>
+
+
+<a id="back-to-top" href="#" class="btn btn-danger btn-lg back-to-top" role="button" title="Clique para retornar ao topo" data-toggle="tooltip" data-placement="left">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+</a>
+
+<script src="js/carregarPizza.js"></script>
