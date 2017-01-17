@@ -1,0 +1,24 @@
+{
+    "aniversariante": [{
+            "id": "3",
+            "nome": "Promoção aniverário na casa dos Mano's",
+            "descricao": "Trazendo 10 pessoas para sua mesa no dia do seu aniversário o seu sai de graça e apresentando esse cupom você ainda ganha uma sobremesa de cortesia",
+            "percentual": "50%",
+            "urlimg": "img/pizzaniver.png"
+    }],
+
+    "happyhour": [{
+            "id": "4",
+            "nome": "Promoção Happy Hour com os Mano's",
+            "descricao": "Imprima esse cupom e ganhe 10% de desconto nos pedidos de pizzas feito dentro do horário de 16hs às 19hs de brinde ganhe um refrigerante 1,5l (a escolher)",
+            "percentual": "10%",
+            "urlimg": "img/pizzahappy.jpg"
+    },
+    {
+            "id": "5",
+            "nome": "Promoção Happy Hour com os Mano's 2017",
+            "descricao": "Nas compras acima de R$ 120,00 enviaremos 2 pizzas brotinho a sua escolha.",
+            "percentual": "20%",
+            "urlimg": "img/pizzabrotinho.jpg"
+    }]
+}
