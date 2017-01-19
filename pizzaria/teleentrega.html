@@ -1,0 +1,37 @@
+<div class="jumbotron">
+    <div class="container" id="jEntrega">
+        <h1>Tele Entrega</h1>
+        <p> A nossa entrega e mais que especial e entregamos em diversas localidades até no máximo 12 pizzas, click na sua localidade para conferir o valor do frete. O valor da entrega varia com a quantidade de pizzas e da região administrativa.</p>
+        <button id="cei" class="btn btn-lg btn-success">Ceilândia</button>
+        <button id="tag" class="btn btn-lg btn-success">Taguatinga</button>
+        <button id="sam" class="btn btn-lg btn-success">Samambaia</button>
+        <button id="rec" class="btn btn-lg btn-success">Recanto das Emas</button>
+        <button id="agu" class="btn btn-lg btn-success">Águas Claras</button>
+        <button id="vic" class="btn btn-lg btn-success">Vicente Pires</button>
+        <button id="gua" class="btn btn-lg btn-success">Guará</button>
+    </div>
+</div>
+<div class="row" id="formEntrega" style="display:none;">
+    <div class="col-lg-12 alert alert-success form-inline">
+        <h1>O valor do frete para a região de <span id="regiao"></span> para  <span id="qtdSel">1</span> pizza(s) é de: <br> R$ <span id="valor"></span></h1>
+        <div class="form-group">
+            <label>Informe a quantidade de pizzas: </label>
+            <select id="qtd" class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+            </select>
+            <input type="hidden" id="valorFreteReg" name="valorFreteReg" value="" />
+        </div>
+    </div>
+</div>
+<script src="js/teleentrega.js"></script>
