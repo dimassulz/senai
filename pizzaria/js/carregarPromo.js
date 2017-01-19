@@ -102,7 +102,7 @@ $(document).ready(function () {
                 function (clickOK) {
                     if (clickOK === null) {
                         bootbox.hideAll();
-                    }else{
+                    } else {
                         bootbox.alert('Seu CPF foi validado com sucesso!', function () {
                             window.print();
                         });
