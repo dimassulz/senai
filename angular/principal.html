@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/angular-1.6.1/angular.js"></script>
+    <script type="text/javascript" src="js/angular-1.6.1/i18n/angular-locale_pt-br.js"></script>
+    <title>Angular JS - Teste</title>
+</head>
+
+<body>
+    <!-- testeApp montando primeira controller chamada minhaCtrl -->
+    <div ng-app="testeApp" ng-controller="minhaCtrl">
+        <h1 style="background-color:{{corData}}">Data Binding</h1>
+        <p>N1: <input type="text" name="nome" ng-model="n1" /></p>
+        <p>N2: <input type="text" name="nome" ng-model="n2" /></p>
+        <p>Cor Data: <input type="text" name="corData" ng-model="corData" /></p>
+        <h1 ng-bind="n1"> </h1>
+        <h1 ng-bind="n2"> </h1>
+        <h1> {{total}} </h1>
+        <p>N3: <input type="text" name="nome" ng-model="n3" /></p>
+        <p>N4: <input type="text" name="nome" ng-model="n4" /></p>
+        <h1>Soma: {{somar()}} </h1>
+        <h1>Subtração: {{subtrair()}} </h1>
+        <h1>Multiplicação: {{multiplicar()}} </h1>
+        <h1>Divisão: {{dividir()}} </h1>
+        
+        <hr>
+  <!-- Filtros de uppercase (caixa alta) e lowecase (caixa baixa)-->
+        <h1>Seja bem vindo Sr. {{registro.nome|uppercase}} | E-mail {{registro.email|lowercase}}</h1>
+         <span>Date: {{ '01/03/1990' | date:'d/M/yyyy' }}</span><br>
+        <span>Currency: {{ 123456 | currency: 'R$ ' }}</span><br>
+        <span>Number: {{ 98765.4321 | number }}</span><br>
+      
+        
+    </div>
+    <script>
+        var app = angular.module('testeApp',[]);
+        //M - MODEL
+        //V - VIEW
+        //W - (qualquer coisa)
+        app.controller('minhaCtrl', function($scope){ 
+            $scope.n1 = "Primeiro Nome"; //Iniciando a model N1
+            $scope.n2 = "Ultimo Nome"; //Iniciando a model N2
+            $scope.total = 10+15;
+            $scope.n3 = 0; //Inicio o campo n3 como um numero
+            $scope.n4 = 0; //Inicio o campo n4 como um numero
+            $scope.registro = {
+                nome: "José",
+                idade: 38,
+                email: "zezin@gmail.com"
+            };
+            $scope.somar = function(){
+                //parseFloat converte o texto em número (do tipo float [Ex.: 10.3])
+                return parseFloat($scope.n3)+parseFloat($scope.n4);
+            };
+            $scope.subtrair = function(){
+                return $scope.n3-$scope.n4;
+            };
+            $scope.multiplicar = function(){
+                return $scope.n3*$scope.n4;
+            };
+            $scope.dividir = function(){
+                return $scope.n3/$scope.n4;  
+            };
+        });
+    </script>
+</body>
+</html>

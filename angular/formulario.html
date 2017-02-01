@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Formulario Angular JS</title>
+
+    <script type="text/javascript" src="js/angular-1.6.1/angular.js"></script>
+    <script type="text/javascript" src="js/angular-1.6.1/i18n/angular-locale_pt-br.js"></script>
+
+    <link rel="shortcut icon" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+        
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+    </style>
+
+    <!--[if IE]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Project name</a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <!--.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container" ng-app="formApp">
+        <div class="starter-template">
+            <div class="row">
+                <form class="form-horizontal" ng-controller="cadastroCtrl">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Verificar Usuário</legend>
+
+                        <!-- Text input-->
+                        <!-- <div class="form-group">
+                            <label class="col-md-4 control-label" for="nome">Nome</label>
+                            <div class="col-md-6">
+                                <input id="nome" name="nome" type="text" placeholder="Digite seu nome" ng-model="nome" class="form-control input-md" required="">
+                                <br>{{nome}}
+                            </div>
+                        </div> -->
+
+                        <!-- Text input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="email">E-mail:</label>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="email" placeholder="Digite um e-mail válido" class="form-control input-md" ng-model="email" required="">
+
+                            </div>
+                        </div>
+
+                        <!-- Password input-->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="senha">Senha:</label>
+                            <div class="col-md-4">
+                                <input id="senha" name="senha" type="password" placeholder="" ng-model="senha" class="form-control input-md" required="">
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="salvar"></label>
+                            <div class="col-md-4">
+                                <button id="salvar" name="salvar" class="btn btn-success" 
+                                ng-click="verificarUsuario()">Verificar</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js">
+    </script>
+    
+    <script type="text/javascript">
+        var app = angular.module('formApp',[]);
+        app.controller("cadastroCtrl", function($scope){
+           var objectUsuario = { nome: "Fernanda", 
+                                 email: "fernanda@gmail.com", 
+                                 senha: "camaro123"
+                               };
+           
+           $scope.verificarUsuario = function(){
+               if($scope.email == objectUsuario.email 
+                  && $scope.senha == objectUsuario.senha){
+                   bootbox.alert("Usuário e senha corretos!");
+               }else{
+                   bootbox.alert("Usuário ou senha incorretos!");
+               }
+               
+           };
+           
+           
+        });
+    </script>
+</body>
+
+</html>
