@@ -1,0 +1,87 @@
+<html>
+<head>
+<title>Teste Crud - Angular JS</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+<script src="app.js"></script>
+
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="myCtrl">
+		<h1 class="text-center">Teste Crud</h1>
+		<div class="pull-left">
+			<h3>Adicionar Empregado</h3>
+			<form name="form">
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text" class="form-control" placeholder="Entre com o nome completo" ng-model="nome" required>
+				</div>
+				<div class="form-group">
+					<label>E-mail</label>
+					<input type="email" name="email" class="form-control" placeholder="Digite um e-mail válido" ng-model="email" required>
+				</div>				
+				<div class="form-group">
+					<label>Salário</label>
+					<input type="number" class="form-control" placeholder="Digite um salário" ng-model="salario" required>
+				</div>				
+				<div class="form-group">
+					<label>Ativo</label>
+					<input type="radio" value="S" ng-model="ativo">Sim
+					<input type="radio" value="N" ng-model="ativo">Não
+				</div>
+				<button type="button" class="btn btn-primary" ng-click="addtoDB()">Adicionar</button>
+				<button type="button" class="btn btn-primary" ng-click="getEmp()">Buscar</button>
+			</form>
+		</div>
+
+		<div class="pull-right" ng-init="getEmp()" ng-show="empregados.length>0">
+			<h3>Lista de Empregados</h3>
+			<table class="table table-striped table-bordered">
+				<thead>
+					<th>Nome</th>
+					<th>E-mail</th>
+					<th>Salário</th>
+					<th>Ativo</th>
+					<th>Editar</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="emp in empregados" ng-include="getTemplate(emp)">
+					<script type="text/ng-template" id="mostrar">
+						<td>{{emp.nome}}</td>
+						<td>{{emp.email}}</td>
+						<td>{{emp.salario | currency:"R$ "}}</td>
+						<td>{{emp.ativo | ativo}}</td>
+						<td>
+							<button type="button" class="btn btn-primary" ng-click="editEmp(emp)">Editar</button>
+							<button type="button" class="btn btn-danger" ng-click="deleteEmp(emp)">Deletar</button>
+						</td>
+					</script>
+					<script type="text/ng-template" id="edit">
+						<td><input type="text" ng-model=emp.nome class="form-control input-sm"/></td>
+						<td><input type="text" ng-model=emp.email class="form-control input-sm"/></td>
+						<td><input type="text" ng-model=emp.salario class="form-control input-sm"/></td>
+						<td>
+							<select class="form-control input-sm" ng-model=emp.ativo>
+								<option value='S'>Sim</option>
+								<option value='N'>Não</option>
+							</select>
+						</td>
+						<td>
+							<button type="button" class="btn btn-primary" ng-click="updateEmpregado(emp)">Salvar</button>
+							<button type="button" class="btn btn-danger" ng-click="reset()">Cancelar</button>
+						</td>
+					</script>
+					</tr>
+				</tbody>
+			<table>
+			
+		</div>
+	</div>
+	
+</body>
+</html>
