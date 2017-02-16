@@ -1,0 +1,46 @@
+<div class="row">
+
+    <div class="col-sm-3 text-center">
+
+            <img src="img/male.png" class="img-thumbnail img-responsive" style="max-height: 150px; max-width:150px;">
+            <div class="caption">
+                <p class="text-center">Masculino</p>
+            </div>
+
+    </div>
+    <div class="col-sm-6">
+        <form>
+            <div class="form-group">
+                <label for="peso">Peso em KG</label>
+                <input type="number" required min="1" max="499" class="form-control" id="peso" ng-model="peso" placeholder="Digite seu peso em Kilogramas">
+            </div>
+            <div class="form-group">
+                <label for="altura">Altura (cm)</label>
+                <input type="number" min="100" max="299" required maxlength="3" class="form-control" id="altura" ng-model="altura" placeholder="Digite sua altura em CM">
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-3 center-block">
+        <button  class="btn btn-success btn-block btn-lg" ng-click="calcular()" >Calcular</button>
+    </div>
+    
+    
+
+</div>
+<div class="row" ng-show="mostraCalculo">
+    
+        <div class="col-sm-12 text-center">
+            <p>Seu IMC é:</p>
+            <h1>{{resultIMC | number}}</h1>
+            <p>Você está {{mostrarTipoIMCMasculino()}}</p>
+            <p>Para sua altura o peso ideal deve ser {{calcularPesoIdealMasculino() | number}}kg </p>
+        </div>
+        
+    </div>
+<div class="row">
+    <div class="col-sm-5 text-right"></div>
+    <div class="col-sm-2 text-right">
+    <a class="btn btn-success btn-block btn-lg" ng-href="/">Voltar</a>
+    </div>
+    <div class="col-sm-5 text-right"></div>
+</div>
