@@ -1,0 +1,55 @@
+<div ng-controller="calcCtrl">
+    <div class="row">
+
+        <div class="col-sm-3 text-center">
+
+            <img src="img/2.jpg" class="img-thumbnail img-responsive" style="max-height: 150px; max-width:150px;">
+            <div class="caption">
+                <p class="text-center">Média de KM Inicial/KMFinal</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <form>
+                <div class="form-group">
+                    <label for="kminicial">Km Inicial</label>
+                    <input type="number" required min="1" max="9999999" class="form-control input-lg" id="kminicial" ng-model="kminicial" placeholder="Digite a quantidade de km que voce iniciou">
+                </div>
+                <div class="form-group">
+                    <label for="kmfinal">Km Final</label>
+                    <input type="number" required min="1" max="9999999" class="form-control input-lg" id="kmfinal" ng-model="kmfinal" placeholder="Digite a quantidade de km que você chegou">
+                </div>
+                <div class="form-group">
+                    <label for="litros">Litros Abastecidos</label>
+                    <input type="number" required min="0" max="999" class="form-control input-lg" id="litros" ng-model="litros" placeholder="Digite a quantidade de litros abastecidos" pattern="\d*">
+                </div>
+                <div class="form-group">
+                    <label for="vlitro">Valor do litro</label>
+                    <input type="number" required min="0" max="999" class="form-control input-lg" id="vlitro" ng-model="vlitro" placeholder="Digite o valor do litro">
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-3">
+            <button class="btn btn-success btn-block btn-lg" ng-click="calcularMediaKm()">Calcular</button>
+            <button class="btn btn-primary btn-block btn-lg" ng-click="limpar()">Limpar</button>
+        </div>
+
+
+
+    </div>
+    <div class="row" ng-show="mostraCalculo">
+        <div class="col-sm-12 text-center">
+
+            <h1>Cuidado com seu consumo!!!!</h1>
+            <p>Seu veiculo esta fazendo a média de <strong>{{media|number}} km/litro</strong> de combustivel</p>
+            <p>Você gastou <strong>{{gasto|currency}}</strong> para percorrer essa distancia </p>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-5 text-center"></div>
+        <div class="col-sm-2 text-center">
+            <a class="btn btn-success btn-block btn-lg" ng-href="/">Voltar</a>
+        </div>
+        <div class="col-sm-5 text-center"></div>
+    </div>
+</div>
